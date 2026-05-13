@@ -10,6 +10,12 @@ My camera does not have a screen (I mean it does, but one good enough to show a 
 
 This project attempts to solve that by bringing a viewfinder and some crude camera controls, maybe a simple photo viewer too to bridge the gap between this being just a gimmick and a (decently) usable camera.
 
-I plan to give this client its own little battery back and to mount it to the back of the camera with some magnets and pogo pins, allowing it to act as a detachable remote control kind of device, inspired by the insta360 GO series but kinda in reverse:)
+I plan to give this client its own little battery back and to mount it to the back of the camera with some magnets and pogo pins, allowing it to act as a detachable remote control kind of device, inspired by the insta360 GO series but kinda in reverse.
 
+## The hardware
 
+[This Pi pico board](https://ro.farnell.com/raspberry-pi/sc1633/rpi-pico-2w-brd-32-bit-arm-cortex/dp/4568690)
+
+[This Display](https://ro.farnell.com/seeed-studio/103030400/lcd-display-module-raspberry-pi/dp/4060364)
+
+TODO: decide on battery pack, power module, design a case for it to fit on the camera, more shall be added
