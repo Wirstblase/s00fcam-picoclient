@@ -35,6 +35,7 @@ The process involved:
 2. **Injecting the C Module**: Cloned `russhughes/st7789_mpy` and linked it into the build process using the `USER_C_MODULES` flag. This allows Python code to call `tft.jpg()` and have it executed entirely in highly-optimized C code with direct memory access.
 3. **Building for Pico W**: Compiled the `ports/rp2` port specifically for the `RPI_PICO_W` board definition so the CYW43 network stack (WiFi) was bundled alongside the display driver.
 
+todo: tutorial how to build the firmware? (was a headache)
 
 Configured the SPI bus to scream at **62.5 MHz** to push pixels to the LCD as fast as physically possible.
 
@@ -53,7 +54,6 @@ Implemented an 8s Watchdog Timer. If the code ever gets stuck, the Pico reboots.
 Next issue: I wanted _zero latency_, so I wrote a script to parse the stream and skip older frames if the network was sending data too fast. But the Pi got trapped in a timing loop: it would find a frame, see a newer one arriving, discard the old one, read more data, see an even newer one, discard the old one... **forever.** It was fetching as fast as it could but never actually stopping to draw the picture
 
 the fix: `O(1)` backwards search using Python's `.rfind()` to search the buffer in reverse, we instantly locate the *absolute latest* HTTP boundary in the buffer, extract that single perfect frame, and dump the rest. 
-
 
 ---
 
