@@ -218,3 +218,13 @@ __marimo__/
 .streamlit/secrets.toml
 
 *.DS_Store
+
+# s00fcam-picoclient
+wifi_creds.json
+SETUP_GUIDE.md
+
+pico-build/
+
+firmware.uf2
+
+src/temp-tests
